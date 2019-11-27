@@ -55,9 +55,7 @@ public class DruidConfig {
 		return filterRegistrationBean;
 	}
 
-	public  String DATASOURCE="spring.datasource";
 	@Bean
-//	@ConfigurationProperties(prefix = "spring.datasource")
 	public DataSource druidDataSource() {
 		DruidDataSource dataSource = new DruidDataSource();
 		dataSource.setUrl(url);

@@ -51,8 +51,7 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         // 没有登陆的用户只能访问登陆页面
         shiroFilterFactoryBean.setLoginUrl("/auth/notLogin");
-        // 登录成功后要跳转的链接
-        // shiroFilterFactoryBean.setSuccessUrl("/auth/index");
+        // 登录成功后要跳转的链接 shiroFilterFactoryBean.setSuccessUrl("/auth/index");
         shiroFilterFactoryBean.setUnauthorizedUrl("/auth/notRole");
         // 自定义拦截器
         Map<String, Filter> filtersMap = new LinkedHashMap<String, Filter>();
