@@ -8,18 +8,18 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
+import org.springframework.stereotype.Component;
 
-@Configuration
+@Component
 @ConfigurationProperties(prefix = "spring.datasource")
 public class DruidConfig {
 	/**
 	 * 主要实现WEB监控的配置处理
-	 * 
+	 *
 	 * @return
 	 */
 	@Bean
@@ -42,7 +42,7 @@ public class DruidConfig {
 
 	/**
 	 * 过滤器
-	 * 
+	 *
 	 * @return
 	 */
 	@Bean
@@ -57,7 +57,7 @@ public class DruidConfig {
 
 	public  String DATASOURCE="spring.datasource";
 	@Bean
-	@ConfigurationProperties(prefix = DATASOURCE)
+//	@ConfigurationProperties(prefix = "spring.datasource")
 	public DataSource druidDataSource() {
 		DruidDataSource dataSource = new DruidDataSource();
 		dataSource.setUrl(url);
